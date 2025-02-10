@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-/*Reseteo los márgenes y establezco el tamaño de las cajas "per default"*/
 *{
     margin: 0;
     padding: 0;
@@ -11,8 +10,7 @@ body{
     background-color: black;
     
 }
-/*He usado el flex con direction:column para apilar las secciones por salto de linea.
-También he usado el gap para mantener un orden uniforme al usar el grid*/
+
 .container{
     display:flex;
     flex-direction: column;
@@ -21,8 +19,6 @@ También he usado el gap para mantener un orden uniforme al usar el grid*/
     margin: 0 auto;
 }
 
-/*grid template-columns me ha recordado los col estilo Bootstrap, así
-que lo he usado para "dividir" los tamaños equitativamente*/
 .header{
     display:grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -47,15 +43,14 @@ que lo he usado para "dividir" los tamaños equitativamente*/
     background-color: rgb(245, 249, 9);
     padding:20px;
 }
-/*Dde nuevo, 3/4 para los articulos y 1/4 para el aside*/
+
 .main{
     display:grid;
     grid-template-columns: 3fr 1fr;
     background-color: black;
     gap:10px;
 }
-/*En template-columns:repeat() hace que se repita la caja en un nuevo
-salto de linea: 2 cajas en el misma particion*/
+
 .articles{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
@@ -69,7 +64,7 @@ salto de linea: 2 cajas en el misma particion*/
     background-color: cornflowerblue;
     padding:10px;
 }
-/*grid-column:span es como expandir celda en una tabla.*/
+
 .navi{
     grid-column:span 2;
     padding:20px;
@@ -98,20 +93,16 @@ footer{
 @media (max-width: 600px) {
     .header {
         grid-template-columns: 1fr;
-    }
-    
+    }   
     .main {
         grid-template-columns: 1fr;
-    }
-    
+    }   
     .articles {
         grid-template-columns: 1fr;
-    }
-    
+    }   
     .navi {
         grid-column: span 1;
-    }
-    
+    }    
     aside {
         flex-direction: column;
     }
@@ -120,16 +111,11 @@ footer{
 @media (min-width:601px) and (max-width:768px){
     .header {
         grid-template-columns: 1fr;
-    }
-    
+    }   
     .main {
         grid-template-columns: 1fr;
-    }
-    
+    }    
     aside {
         flex-direction: column;
-
     }
-
-
 }
